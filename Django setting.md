@@ -63,7 +63,7 @@ setuptools 40.8.0
 - `.gitignore` 파일 생성 후 붙여넣기
 
 ```bash
-touch .git ignore
+touch .gitignore
 ```
 
 ### VS Code Django  환경 setting

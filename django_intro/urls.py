@@ -23,6 +23,9 @@ from pages import views
 # www.ssafy.com/index  => views.index
 urlpatterns = [
     # path('사용자가 접속하는 경로')
+    path('lotto/', views.lotto),
+    path('isitbirthday/', views.isitbirthday),
+    path('template_language/', views.template_language),
     path('times/<int:num1>/<int:num2>/', views.times),
     path('greeting/<str:name>/', views.greeting),
     path('image/', views.image),
@@ -30,4 +33,4 @@ urlpatterns = [
     path('introduce/', views.introduce),
     path('index/', views.index),  # view 에 있는 index 라고 하는 함수를 실행
     path('admin/', admin.site.urls),
-]
+    ]

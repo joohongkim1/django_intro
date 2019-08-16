@@ -69,13 +69,17 @@ $ python manage.py startapp pages <= pages 는 임의로 정한 이름
 - `url` 과 `view` 함수가 연동된다.
 - 이 곳에 작성되는 함수를 `view` 함수라고 한다.
 
-
-
 ## Python File 3대장
 
 - models.py , views.py, urls
 
 
+
+## 흐름
+
+- url 과 view 함수를 mapping 해준다.
+- view 함수에서 만들고자 하는 page 먼저 정의
+- template 을 만든다
 
 
 
