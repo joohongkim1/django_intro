@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lotto_result</title>
+</head>
+<body>
+  <h1>Lotto Result</h1>
+  <h2>입력 숫자 {{ pick_num }}</h2>
+  <h2>당첨 숫자 {{ result_num }}</h2>
+  {% if pick == result_num %}
+  <h2>당첨 다 때려치고 싶다.</h2>
+  {% else %}
+  <h2>ㅋ</h2>
+  {% endif %}
+</body>
+</html>

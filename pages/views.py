@@ -90,3 +90,34 @@ def lotto(request):
     
     return render(request, 'lotto.html', context)
 
+
+def search(request):  # search 부터 result 까지의 흐름을 파악할 것
+    return render(request, 'search.html')
+
+
+def result(request):   # 중요하니까 잘 이해할 것, 흐름 파악 
+    query = request.GET.get('query')
+    category = request.GET.get('category')
+    context = {
+        'query': query,
+        'category': category,
+    }
+    return render(request, 'result.html', context)
+
+
+def lotto_pick(request):
+    return render(request, 'lotto_pick.html')
+
+
+def lotto_result(request):
+    pick_num = request.GET.get('pick_num')
+    pick_num = list(map(int, pick_num.split()))
+    result_num = [21, 25, 30, 32, 40, 42]
+
+    pick_num.sort()
+    context = {
+        'pick_num': pick_num,
+        'result_num': result_num,
+    }
+
+    return render(request, 'lotto_result.html', context)
