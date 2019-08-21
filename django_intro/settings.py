@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Local apps <- 직접 생성한 앱, 가장 위쪽에 둠
     'pages',   # 생성한 어플리케이션명 
+    'utilities',
     
     # Third party apps <- 중간 위치에 둔다.
     

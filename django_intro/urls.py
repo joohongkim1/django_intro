@@ -16,27 +16,12 @@ Including another URLconf
 
 # django_intro/urls.py
 from django.contrib import admin
-from django.urls import path
-from pages import views  
+from django.urls import path, include
 
 # www.ssafy.com/login  => 404 not found
 # www.ssafy.com/index  => views.index
 urlpatterns = [
-    # path('사용자가 접속하는 경로')
-    path('static_example', views.static_example),
-    path('lotto_pick/', views.lotto_pick),
-    path('lotto_result/', views.lotto_result),
-    path('result/', views.result),
-    path('search/', views.search),
-
-    path('lotto/', views.lotto),
-    path('isitbirthday/', views.isitbirthday),
-    path('template_language/', views.template_language),
-    path('times/<int:num1>/<int:num2>/', views.times),
-    path('greeting/<str:name>/', views.greeting),
-    path('image/', views.image),
-    path('dinner/<str:name>/', views.dinner),
-    path('introduce/', views.introduce),
-    path('index/', views.index),  # view 에 있는 index 라고 하는 함수를 실행
+    path('utilities/', include('utilities.urls')),
+    path('pages/', include('pages.urls')),
     path('admin/', admin.site.urls),
     ]
