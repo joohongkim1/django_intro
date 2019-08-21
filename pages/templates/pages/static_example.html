@@ -1,19 +1,12 @@
 {% comment %} 파일 상단 작성 매우 중요 {% endcomment %}
 {% comment %} 각 어플리케이션에 있는 static 폴더들 안에 있는 static 파일에 대한 주소 생성 {% endcomment %}
+{% extends 'baes.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Static Example</title>
-  <link rel="stylesheet" href={% static 'style_sheets/example.css' %}>
-</head>
-<body>
+{% block title %}Static Example{% endblock  %}
+
+{% block content %}
   <h1>STATIC 파일 실습</h1>
-  <img src="{% static 'images/강아지.jpg' %}" alt="dog">
-  <img src="{% static 'images/강아지2.jpg' %}" alt="dog">
-</body>
-</html>
+  <img src="{% static 'pages/images/강아지.jpg' %}" alt="dog">
+  <img src="{% static 'pages/images/강아지2.jpg' %}" alt="dog">
+{% endblock  %}
