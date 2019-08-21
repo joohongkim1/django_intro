@@ -7,11 +7,11 @@ import random
 def index(request): # 첫 번째 인자는 반드시 request => 사용자가 보내는 요청에 대한 정보
     # 요청이 들어오면 index.html 을 보여준다.
     # templates 폴더에서 해당하는 파일을 찾아 보여준다.
-    return render(request, 'index.html')  # render 의 첫 인자도 request, template_name => 만들고자 하는 페이지 이름
+    return render(request, 'pages/index.html')  # render 의 첫 인자도 request, template_name => 만들고자 하는 페이지 이름
                                           
 
 def introduce(request):
-    return render(request, 'introduce.html')
+    return render(request, 'pages/introduce.html')
 
 
 # Template Cariable Example
@@ -24,7 +24,7 @@ def dinner(request, name):
     }
 
     # Django template 으로 context 전달
-    return render(request, 'dinner.html', context)  # context 를 dinner.html 에 전달
+    return render(request, 'pages/dinner.html', context)  # context 를 dinner.html 에 전달
 
 
 def image(request):
@@ -34,14 +34,14 @@ def image(request):
         'image_url': image_url,
     }
 
-    return render(request, 'image.html', context)
+    return render(request, 'pages/image.html', context)
 
 
 def greeting(request, name):
     context = {
         'name': name,
     }
-    return render(request, 'greeting.html', context)
+    return render(request, 'pages/greeting.html', context)
 
 
 def times(request, num1, num2):
@@ -50,7 +50,7 @@ def times(request, num1, num2):
         'num2': num2,
         'result': num1 * num2,
     }
-    return render(request, 'times.html', context)
+    return render(request, 'pages/times.html', context)
 
 
 def template_language(request):
@@ -67,7 +67,7 @@ def template_language(request):
         'datetimenow': datetimenow,
     }
 
-    return render(request, 'template_language.html', context)
+    return render(request, 'pages/template_language.html', context)
 
 
 def isitbirthday(request):
@@ -76,7 +76,7 @@ def isitbirthday(request):
 #         'my_birth': my_birth,
 #     }
 
-    return render(request, 'isitbirthday.html')
+    return render(request, 'pages/isitbirthday.html')
 
 
 def lotto(request):
@@ -88,11 +88,11 @@ def lotto(request):
         'lottos': lottos,
     }
     
-    return render(request, 'lotto.html', context)
+    return render(request, 'pages/lotto.html', context)
 
 
 def search(request):  # search 부터 result 까지의 흐름을 파악할 것
-    return render(request, 'search.html')
+    return render(request, 'pages/search.html')
 
 
 def result(request):   # 중요하니까 잘 이해할 것, 흐름 파악 
@@ -102,15 +102,15 @@ def result(request):   # 중요하니까 잘 이해할 것, 흐름 파악
         'query': query,
         'category': category,
     }
-    return render(request, 'result.html', context)
+    return render(request, 'pages/result.html', context)
 
 
 def lotto_pick(request):
-    return render(request, 'lotto_pick.html')
+    return render(request, 'pages/lotto_pick.html')
 
 
 def lotto_result(request):
-    pick_num = request.GET.get('pick_num')
+    pick_num = request.GET.get('pages/pick_num')
     pick_num = list(map(int, pick_num.split()))
     result_num = [21, 25, 30, 32, 40, 42]
 
@@ -120,19 +120,19 @@ def lotto_result(request):
         'result_num': result_num,
     }
 
-    return render(request, 'lotto_result.html', context)
+    return render(request, 'pages/lotto_result.html', context)
 
 
 def static_example(request):
-    return render(request, 'static_example.html')
+    return render(request, 'pages/static_example.html')
 
 
 def push(request):
-    return render(request, 'push.html')
+    return render(request, 'pages/push.html')
 
 def pull(request):
     number = request.GET.get('number')
     context = {
         'number': number,
     }
-    return render(request, 'pull.html', context)
+    return render(request, 'pages/pull.html', context)
